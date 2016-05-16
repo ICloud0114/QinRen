@@ -1,0 +1,145 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#define USERNAME                @"username"
+//#define MOBILE                  @"mobile"
+#define CODE                    @"code"
+#define PASSWORD                @"password"
+#define SN                      @"sn"
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#import "Macro.h"
+#import "User.h"
+#import "ZZTool.h"
+
+#import "XGLFetchJsonDataClass.h"
+#import "QRModelGetClient.h"
+#import "XGLModelClass.h"
+
+#import "EAHttpAPIClient.h"
+#import "DataParser.h"
+#import "JSONKit.h"
+#import "SVProgressHUD.h"
+
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#   define ELog(err) {if(err) DLog(@"%@", err)}
+#else
+#   define DLog(...)
+#   define ELog(err)
+#endif
+
+
+
+#define kMY_USER_ID @"myUserId"
+#define kMY_USER_PASSWORD @"myUserPassword"
+#define kMY_USER_NICKNAME @"myUserNickname"
+#define kMY_USER_Head @"myUserHead"
+#define kMY_USER_LoginName @"myUserLoginName"
+//#define kXMPPmyJID @"myXmppJid"
+//#define kXMPPmyPassword @"myXmppPassword"
+#define kXMPPNewMsgNotifaction @"xmppNewMsgNotifaction"
+#define kXMPPNewFriendNotifaction @"xmppNewFriendNotifaction"
+#define kLoginNotifaction @"kLoginNotifaction"
+
+
+
+//FMDB
+#define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); abort(); } }
+
+#define DATABASE_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingString:@"/weChat.db"]
+
+
+
+#pragma
+
+#define INCREMENT (([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)?20:20)
+
+#define NAVHEIGHT (([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)?44:44)
+
+#define SCREENWIDTH                 ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT                ([UIScreen mainScreen].bounds.size.height)
+
+#define Screen  [UIScreen mainScreen]
+#define DAPagesItemsOffset [UIScreen mainScreen].bounds.size.width/6
+#define MessageItemsOffset [UIScreen mainScreen].bounds.size.width/11
+#define Iphone5MessageItemsOffset [UIScreen mainScreen].bounds.size.width/10
+#define NaviHight self.navigationController.navigationBar.frame.size.height
+#define BaseUrl @"http://developer.ebaochina.cn/ebaomobileapi"
+//#define BaseUrl @"http://192.168.1.199:8080/ebaomobileapi"
+#define RequestHead  @{@"platform":@"ios",@"version":@"1.0.5",@"store":@"10000"}
+//GCD
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+#define dispatch_main_async_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+}\
+else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+#define Partner                  @"partner"                   //合作者
+#define Seller                   @"seller"                    //卖家
+#define Body                     @"body"                        //
+#define PrivateKEY               @"privateKey"                  //广告关键字
+#define MySign                   @"mysign"
+
+#define backButtonSizeH 40
+#define backButtonSizeW 40
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SRCHEIGHT  (self.view.frame.size.height)
+#define g_App ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+#define RGB(r, g, b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
+#define JX_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height-20
+#define JX_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define DATA(X)	[X dataUsingEncoding:NSUTF8StringEncoding]
+#define RSTRING(X) NSStringFromCGRect(X)
+#define COOKBOOK_PURPLE_COLOR	[UIColor colorWithRed:0.20392f green:0.19607f blue:0.61176f alpha:1.0f]
+
+#define DATA                    @"data"
+#define IMLoginStatusChangedNotification @"IMLoginStatusChangedNotification"
+#define IMLogoutNotification @"IMLogoutNotification"
+#define IMGroupListDidInitializeNotification @"IMGroupListDidInitializeNotification"
+#define IMRelationshipDidInitializeNotification @"IMRelationshipDidInitializeNotification"
+#define IMCustomUserInfoDidInitializeNotification @"IMCustomUserInfoDidInitializeNotification"
+#define IMReloadBlacklistNotification @"IMReloadBlacklistNotification"
+#define IMReloadFriendlistNotification @"IMReloadFriendlistNotification"
+#define IMReloadMainPhotoNotification @"IMReloadMainPhotoNotification"
+#define IMAddGroupMemberNotification @"IMAddGroupMemberNotification"
+#define IMReloadGroupListNotification @"IMReloadGroupListNotification"
+#define IMRemovedGroupNotification(groupID) [NSString stringWithFormat:@"IMRemovedGroupNotification%@",groupID]
+#define IMDeleteGroupNotification(groupID) [NSString stringWithFormat:@"IMDeleteGroupNotification%@",groupID]
+#define IMShowGroupMemberNameNotification(groupID) [NSString stringWithFormat:@"IMShowGroupMemberNameNotification%@",groupID]
+#define IMReceiveUserMessageNotification @"IMReceiveUserMessageNotification"
+#define IMUnReadMessageChangedNotification @"IMUnReadMessageChangedNotification"
+
+#define OUT_Trade_NO             @"out_trade_no"
+#define Subject                  @"subject"
+#define Total_fee                @"total_fee"
+#define NoTify_URL               @"notify_url"
+
+#define IMDeveloper_APPKey @"d3fecc6841c022fc7b7021dd"
+#define IMLoginCustomUserID @"IMLoginCustomUserID"
+#define IMLastLoginTime @"IMLastLoginTime"
+#define IMLoginPassword @"IMLoginPassword"
+#define IMShowGroupMemberName(customUserID, groupID) [NSString stringWithFormat:@"showGroupMemberName:%@_%@",customUserID,groupID]
+
+
+

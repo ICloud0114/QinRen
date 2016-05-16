@@ -1,0 +1,23 @@
+//
+//  EAHttpAPIClient.h
+//  Cherries
+//
+//  Created by Donny on 5/22/14.
+//  Copyright (c) 2014 Donny. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+
+@interface EAHttpAPIClient : AFHTTPRequestOperationManager
+
+- (AFHTTPRequestOperation *)GetWithParameters:(NSDictionary *)parameters
+                                       method:(NSString *)method
+                        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
+- (NSString *)requestStringWithParameters:(NSDictionary *)parameters
+                                   method:(NSString *)method;
+
+@end

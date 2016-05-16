@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PayView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0g-ai-i43">
+                    <rect key="frame" x="215" y="5" width="93" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="93" id="NNw-Wc-iaL"/>
+                        <constraint firstAttribute="height" constant="34" id="Yap-Ja-K4v"/>
+                    </constraints>
+                    <state key="normal" image="lijigoumai">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="lijijiesuanBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="tvq-4e-K9N"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-Ve-qn6">
+                    <rect key="frame" x="114" y="5" width="93" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="2z9-hA-g6N"/>
+                        <constraint firstAttribute="width" constant="93" id="lDl-cS-9po"/>
+                    </constraints>
+                    <state key="normal" image="gouwuche">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="jiarugouwucheBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="uzx-t6-mY0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-QR-wKZ">
+                    <rect key="frame" x="43" y="3" width="43" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="Fxy-L8-bkH"/>
+                        <constraint firstAttribute="width" constant="43" id="Gau-Xi-HaY"/>
+                    </constraints>
+                    <state key="normal" image="xin-01">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="shoucang_hover_75"/>
+                    <connections>
+                        <action selector="shoucangBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="T7a-xC-iEQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="X0g-ai-i43" secondAttribute="trailing" constant="12" id="023-yd-Lpt"/>
+                <constraint firstItem="X0g-ai-i43" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="0vs-V5-X83"/>
+                <constraint firstAttribute="bottom" secondItem="X0g-ai-i43" secondAttribute="bottom" constant="5" id="EJc-T0-WbL"/>
+                <constraint firstAttribute="bottom" secondItem="FIO-QR-wKZ" secondAttribute="bottom" constant="5" id="Jc6-Pf-hvM"/>
+                <constraint firstItem="X0g-ai-i43" firstAttribute="leading" secondItem="W6b-Ve-qn6" secondAttribute="trailing" constant="8" id="TaJ-BE-Zul"/>
+                <constraint firstItem="W6b-Ve-qn6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="V7R-uf-lTW"/>
+                <constraint firstItem="X0g-ai-i43" firstAttribute="leading" secondItem="W6b-Ve-qn6" secondAttribute="trailing" constant="8" id="bZ8-8X-iyO"/>
+                <constraint firstItem="FIO-QR-wKZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="43" id="dk1-ve-Kv6"/>
+                <constraint firstAttribute="bottom" secondItem="W6b-Ve-qn6" secondAttribute="bottom" constant="5" id="qPW-U9-aaJ"/>
+                <constraint firstItem="FIO-QR-wKZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="zL4-Mv-2PZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="307" y="76"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gouwuche" width="220" height="75"/>
+        <image name="lijigoumai" width="180" height="75"/>
+        <image name="shoucang_hover_75" width="22" height="20"/>
+        <image name="xin-01" width="80" height="80"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
